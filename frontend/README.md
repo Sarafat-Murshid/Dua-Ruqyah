@@ -1,28 +1,57 @@
 # Dua-Web-Application
 
-This template provides a company. 
+This project is a web application for displaying categories, subcategories, and duas. It consists of a backend built with Node.js, Express, and SQLite, and a frontend built with React and Tailwind CSS.
 
+## Backend
 
-# Tasks to Do:
+The backend is implemented using Node.js with Express and SQLite. It provides several API endpoints to fetch data from the SQLite database.
 
-1. Use This Database for creating endpoints to fetch categories, subcategories, and duas. Node JS is recommended for this.
+### Database Connection
 
-2. Use Tailwind CSS & REACT JS to clone the full UI of this link-
+The SQLite database is connected in `server.js`.
 
-![Dua Ruqyah Test](https://github.com/ObaydulK/Dua-Web-Application/assets/88238461/db573aed-4895-447b-856e-3785c15d91cf)
-Figma File Link : https://www.figma.com/file/rb4NkC5FXbDhQw6wbl2BTC/Dua-Ruqyah-Test?type=design&node-id=0-1&mode=design
+### API Endpoints
 
+- **GET /category**: Fetches all categories.
+- **GET /sub_category**: Fetches subcategories by category ID.
+- **GET /dua**: Fetches duas by category ID and subcategory ID.
+- **GET /dua/:id**: Fetches a specific dua by ID.
 
-3. Categories Section, Dua Cards will be functional (same as given link). Required data will come from your APIs. Note that, the red marked sections don't need to be functional, just do the UI only (follow figma file and live link).
-4. Utilize Static Site Generation (SSG) feature to pre-render this page .
+## Frontend
 
-5. Make sure that the fronted design will be the same as our given link & make the entire site responsive as far as you can.
+The frontend is built using React and Tailwind CSS. It fetches data from the backend and displays it in a user-friendly interface.
 
-# Submission Guidelines:
-1. Push your code to a public repository on GitHub (Both Frontend and Backend Codes) and give the Repo & Live Link in mail.
+### Main Layout
 
-   
-   This Depoly: https://dua-web-application.vercel.app/
+The main layout is defined in `Main.jsx`, which includes the navbar and settings sidebar.
 
+### Pages
 
+- **Home**: The home page is implemented in `Home.jsx`. It includes components like `Categories` and `Details`.
+- **Categories**: The categories component fetches and displays categories and their subcategories from the backend. It is implemented in `Categories.jsx`.
+- **Details**: The details component fetches and displays duas based on the selected category and subcategory. It is implemented in `Details.jsx`.
+- **Other Pages**: There are other pages like `Dashboard`, `Bookmark`, `Lightbulb`, `MessagesSquar`, and `BookOutline`, each implemented in their respective files.
 
+## Running the Project
+
+### Backend
+
+1. Navigate to the `backend` directory.
+2. Install dependencies: `npm install`.
+3. Start the server: `npm start` or `npm run dev`.
+
+### Frontend
+
+1. Navigate to the `frontend` directory.
+2. Install dependencies: `npm install`.
+3. Start the development server: `npm run dev`.
+
+The frontend will be served on a development server (usually `http://localhost:3000`), and it will communicate with the backend server running on `http://localhost:5000`.
+
+## Deployment
+
+To deploy the application, you can use services like Vercel, Netlify, or any other hosting provider that supports Node.js and React applications.
+
+## License
+
+This project is licensed under the MIT License.

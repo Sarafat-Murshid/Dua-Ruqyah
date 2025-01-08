@@ -81,6 +81,29 @@ app.get("/dua", (req, res) => {
   });
 });
 
+// GET: Dua by ID
+app.get("/dua/:id", (req, res) => {
+  const { id } = req.params;
+  db.get("SELECT * FROM dua WHERE id = ?", [id], (err, row) => {
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        error: err.message
+      });
+    }
+    if (!row) {
+      return res.status(404).json({
+        success: false,
+        error: "Dua not found"
+      });
+    }
+    res.json({
+      success: true,
+      data: row
+    });
+  });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);

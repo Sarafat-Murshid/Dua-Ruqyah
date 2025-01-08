@@ -197,7 +197,7 @@ const Home = () => {
             <Categories isNavbarVisible={isNavbarVisible} />
           </div>
           <div className="col-span-8">
-            <Details isNavbarVisible={isNavbarVisible} />
+            <Details isNavbarVisible={isNavbarVisible} catId={1} subcatId={1} />
           </div>
         </div>
       </div>
