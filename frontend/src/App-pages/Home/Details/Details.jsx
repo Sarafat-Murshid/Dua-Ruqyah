@@ -11,7 +11,9 @@ const Details = ({ isNavbarVisible, catId, subcatId }) => {
   const [duas, setDuas] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/dua?cat_id=${catId}&subcat_id=${subcatId}`)
+    fetch(
+      `https://dua-ruqyah-yz97.onrender.com/dua?cat_id=${catId}&subcat_id=${subcatId}`
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {

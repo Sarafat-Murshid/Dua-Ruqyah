@@ -5,7 +5,7 @@ const Categories = ({ isNavbarVisible }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://dua-ruqyah-yz97.onrender.com/category")
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -33,7 +33,9 @@ const Categories = ({ isNavbarVisible }) => {
   }, []);
 
   const fetchSubcategories = (cat_id) => {
-    return fetch(`http://localhost:5000/sub_category?cat_id=${cat_id}`)
+    return fetch(
+      `https://dua-ruqyah-yz97.onrender.com/sub_category?cat_id=${cat_id}`
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
